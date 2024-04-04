@@ -4,7 +4,7 @@ from .serializers import MovieSerializer, ReviewsSerializer
 from rest_framework import generics
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .models import Movie, Reviews
+from .models import Movie, Review
 
 
 class Home(APIView):
@@ -29,7 +29,7 @@ class ReviewsListCreate(generics.ListCreateAPIView):
 
     def get_queryset(self):
         movie_id = self.kwargs['movie_id']
-        return Reviews.objects.filter(movie_id=movie_id)
+        return Review.objects.filter(movie_id=movie_id)
 
     def perform_create(self, serializer):
         movie_id = self.kwargs['movie_id']
@@ -43,4 +43,4 @@ class ReviewsDetail(generics.RetrieveUpdateDestroyAPIView):
 
     def get_queryset(self):
         movie_id = self.kwargs['movie_id']
-        return Reviews.objects.filter(movie_id=movie_id)
+        return Review.objects.filter(movie_id=movie_id)

@@ -2,7 +2,7 @@
 
 # Register your models here.
 
-from .models import Movie, Reviews
+from .models import Movie, Review
 from django.contrib import admin
 # import your models here
 
@@ -14,7 +14,7 @@ admin.site.register(Movie)
 
 
 # register the new Feeding Model
-admin.site.register(Reviews)
+admin.site.register(Review)
 
 
 # add Feeding to the import

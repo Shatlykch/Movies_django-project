@@ -1,4 +1,4 @@
-from .models import Movie, Reviews
+from .models import Movie, Review
 from rest_framework import serializers
 
 
@@ -10,6 +10,6 @@ class MovieSerializer(serializers.ModelSerializer):
 
 class ReviewsSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Reviews
+        model = Review
         fields = '__all__'
         read_only_fields = ('movie',)
